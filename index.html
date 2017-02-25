@@ -32,28 +32,19 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <nav class="navbar navbar-light sticky-top navbar-toggleable-md">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="container">
-            <a class="navbar-brand" href="#"><img src="img/logo-black.svg" height="40rem" alt="Corellian Design Logo"></a>
-
-              <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav ml-auto mt-2 mt-md-0">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#"><span class="contact">Disabled</span></a>
-                  </li>
-                </ul>
-              </div>  
-          </div>
-        </nav>
+        <header>
+            <div class="container clearfix">
+                <div id="logo">
+                    <a href="#"><img src="img/logo-black.svg" alt="Corellian Design Logo"></a>
+                </div>
+                <nav>
+                    <a class="hidden" href="#">Lorem</a>
+                    <a class="hidden" href="#">Ipsum</a>
+                    <a class="hidden" href="#">Dolor</a>
+                    <a href="#"><span class="contact">Disabled</span></a>
+                </nav>
+            </div>
+        </header><!-- /header -->
 
         <section class="jumbotron text-center overlay">
           <div class="container">
@@ -86,6 +77,18 @@
             </div>
           </div>
         </div>
+        
+        <section class="services text-muted">
+            <div class="container">
+                <h1>Services</h1>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    
+                </div>
+            </div>
+        </section>
 
         <footer class="text-muted">
           <div class="container">
@@ -107,6 +110,25 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        
+        <!--    NAV RESIZE ON SCROLL    -->
+        <script>
+            function init() {
+                window.addEventListener('scroll', function(e){
+                    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                        shrinkOn = 192,
+                        header = document.querySelector("header");
+                    if (distanceY > shrinkOn) {
+                        classie.add(header,"smaller");
+                    } else {
+                        if (classie.has(header,"smaller")) {
+                            classie.remove(header,"smaller");
+                        }
+                    }
+                });
+            }
+            window.onload = init();
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
